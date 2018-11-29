@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+
+#management.server.port,配置了Actuator 对外暴露REST API 接口的端口号,访问实例：http://localhost:9091/actuator/health
+info:
+  head: head
+  body: body
+management:
+  server:
+    port: 9091
+  endpoints:
+    web:
+      exposure:
+        #加载所有端点,除了env，默认只加载info\health
+        include: '*'
+        exclude: 'env'
+  endpoint:
+    health:
+      show-details: always
+    #可以关闭指定的端点，设置为false
+    shutdown:
+      enabled: false
+
+
+my:
+  name: forezp
+  age: 12
+  number: ${random.int}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  value: ${random.value}
+  greeting: hi, I'm ${my.name}
