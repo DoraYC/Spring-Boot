@@ -8,4 +8,3 @@
 - 整合JPA
 - 整合Redis
 - 使用Swagger2生成在线Restful风格接口
-- 
